@@ -178,12 +178,12 @@ void processTree(address p, point a, point b) {
                 p->interval[1] = fmax(a.x, b.x);
                 p->Neff = 2;
             } else if (a.y < p->data) {
-                p->interval[1] = fmin((p->data - a.y) * (b.x - a.x) / (b.y - a.y) + a.x, a.x);
-                p->interval[0] = fmax((p->data - a.y) * (b.x - a.x) / (b.y - a.y) + a.x, a.x);
+                p->interval[1] = fmax((p->data - a.y) * (b.x - a.x) / (b.y - a.y) + a.x, a.x);
+                p->interval[0] = fmin((p->data - a.y) * (b.x - a.x) / (b.y - a.y) + a.x, a.x);
                 p->Neff = 2;
             } else if (b.y < p->data) {
-                p->interval[1] = fmin((p->data - a.y) * (b.x - a.x) / (b.y - a.y) + a.x, b.x);
-                p->interval[0] = fmax((p->data - a.y) * (b.x - a.x) / (b.y - a.y) + a.x, b.x);
+                p->interval[1] = fmax((p->data - a.y) * (b.x - a.x) / (b.y - a.y) + a.x, b.x);
+                p->interval[0] = fmin((p->data - a.y) * (b.x - a.x) / (b.y - a.y) + a.x, b.x);
                 p->Neff = 2;
             }
         } else {
@@ -192,12 +192,12 @@ void processTree(address p, point a, point b) {
                 p->interval[1] = fmax(a.x, b.x);
                 p->Neff = 2;
             } else if (a.z < p->data) {
-                p->interval[1] = fmin((p->data - a.z) * (b.x - a.x) / (b.z - a.z) + a.x, a.x);
-                p->interval[0] = fmax((p->data - a.z) * (b.x - a.x) / (b.z - a.z) + a.x, a.x);
+                p->interval[1] = fmax((p->data - a.z) * (b.x - a.x) / (b.z - a.z) + a.x, a.x);
+                p->interval[0] = fmin((p->data - a.z) * (b.x - a.x) / (b.z - a.z) + a.x, a.x);
                 p->Neff = 2;
             } else if (b.z < p->data) {
-                p->interval[1] = fmin((p->data - a.z) * (b.x - a.x) / (b.z - a.z) + a.x, b.x);
-                p->interval[0] = fmax((p->data - a.z) * (b.x - a.x) / (b.z - a.z) + a.x, b.x);
+                p->interval[1] = fmax((p->data - a.z) * (b.x - a.x) / (b.z - a.z) + a.x, b.x);
+                p->interval[0] = fmin((p->data - a.z) * (b.x - a.x) / (b.z - a.z) + a.x, b.x);
                 p->Neff = 2;
             }
         }
